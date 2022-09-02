@@ -5,6 +5,8 @@ import colors from '../../theme/colors';
 
 export default function Book({ id, thumbnail }) {
   const navigation = useNavigation();
+
+  console.log(id)
   return (
     <Pressable
       style={styles.card}

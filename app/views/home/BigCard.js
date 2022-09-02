@@ -4,8 +4,6 @@ import colors from '../../theme/colors';
 
 export default function BigCard({ data }) {
   const navigation = useNavigation();
-
-  console.log('d', data.imageLinks)
   return (
     <Pressable
       style={styles.card}

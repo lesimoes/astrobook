@@ -64,7 +64,7 @@ export default function Home({ navigation }) {
           {authors ? <FlatList
             horizontal
             data={authors}
-            renderItem={({ item }) => <Card {...item} />}
+            renderItem={({ item }) => <Card {...item} key={item.id} />}
             keyExtractor={(item) => item.id}
           /> : <Skeleton animation="pulse" width={'100%'} height={200} />}
           
@@ -76,7 +76,7 @@ export default function Home({ navigation }) {
           {books ? <FlatList
             horizontal
             data={books}
-            renderItem={({ item }) => <Card {...item} />}
+            renderItem={({ item }) => <Card {...item} key={item.id} />}
             keyExtractor={(item) => item.id}
           /> : <Skeleton animation="pulse" width={'100%'} height={200} />}
           

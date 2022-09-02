@@ -7,7 +7,6 @@ function SearchProvider({ children }) {
 
   function handleSearch(textSearch) {
     setText(textSearch);
-    console.log(textSearch);
   }
   return (
     <SearchContext.Provider value={{ text, handleSearch }}>

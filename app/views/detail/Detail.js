@@ -4,56 +4,12 @@ import { Icon } from '@rneui/base';
 import { View, Text, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
 import { getBook } from '../../services/googleBooks';
 import colors from '../../theme/colors';
+import Rating from '../../components/Rating';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 const htmlRegex = /<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;/g;
-
-function Rating ({ rating = 0 }) {
-
-
-  let stars = Array(5).map((value, index) => (
-    <Icon
-      key={index}
-      name="star-outline"
-      type="ionicon"
-      size={18}
-      color={colors.subtext}
-    />
-  ));
-  const integer = Math.floor(rating);
-  const decimal = rating % 1;
-  
-  for (let i = 0 ; i < 5 ; i ++) {
-    if (i < integer) {
-      stars[i] = (
-        <Icon
-            name="star-sharp"
-            type="ionicon"
-            size={20}
-            color={colors.yellow}
-        />
-      )
-    }
-    if ((i + 1) === integer && decimal) {
-      stars[i] = (
-        <Icon
-          name="star-half-sharp"
-          type="ionicon"
-          size={20}
-          color={colors.yellow}
-      />
-      )
-    } 
-  }
-
-  return(
-    <View style={{ flexDirection: 'row', alignItems: 'center', height: 20}}> 
-      {stars} 
-    </View>
-  )
-}
 
 export default function Detail() {
   const {
@@ -103,7 +59,7 @@ export default function Detail() {
           </View>
         </View>
         <View style={{flex: 1, flexDirection: 'row', height: 20}}>
-          <Rating rating={detail.averageRating}/>
+          <Rating rating={detail.averageRating} />
           <Text style={{color: colors.subtext, marginLeft: 10}}>{detail.ratingsCount} Avaliações</Text>
         </View>
   

@@ -5,13 +5,13 @@ import {
   Keyboard,
   Image,
 } from 'react-native';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { searchBooks } from '../../services/googleBooks';
 import colors from '../../theme/colors';
 import Book from './Book';
 import { useSearch } from '../../contexts/SearchContext';
 
-export default function SearchBooks({ navigation }) {
+export default function SearchBooks({ }) {
   const [books, setBooks] = useState([]);
   const { text } = useSearch();
 
