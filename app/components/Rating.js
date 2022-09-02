@@ -4,8 +4,7 @@ import colors from '../theme/colors';
 
 export default function Rating ({ rating = 0 }) {
 
-
-    let stars = Array(5).map((value, index) => (
+    const stars = Array(5).map((value, index) => (
       <Icon
         key={index}
         name="star-outline"
@@ -21,6 +20,7 @@ export default function Rating ({ rating = 0 }) {
       if (i < integer) {
         stars[i] = (
           <Icon
+              key={i}
               name="star-sharp"
               type="ionicon"
               size={20}
@@ -31,6 +31,7 @@ export default function Rating ({ rating = 0 }) {
       if ((i + 1) === integer && decimal) {
         stars[i] = (
           <Icon
+            key={i}
             name="star-half-sharp"
             type="ionicon"
             size={20}
